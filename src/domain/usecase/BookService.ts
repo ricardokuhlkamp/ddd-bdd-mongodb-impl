@@ -5,8 +5,7 @@ import { BookRepository } from "../repository/BookRepository";
 class BookService {
   private _book: IBook;
 
-  constructor(book: IBook, private repository: BookRepository) {
-    if (!this.isValidIsbn(book.isbn)) throw new Error('Invalid Key!');
+  constructor(book: IBook, private repository: BookRepository) {    
     this._book = book;
   }
 
