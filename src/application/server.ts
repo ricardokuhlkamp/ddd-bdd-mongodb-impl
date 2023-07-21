@@ -2,10 +2,9 @@ import 'dotenv/config';
 import app from './app';
 import connectToDatabase from '../infrastructure/models/Connection';
 
-const PORT = +process.env.PORT || 3001;
 connectToDatabase()
   .then(() => {
-    app.listen(PORT, '0.0.0.0', () => console.log(`Running server on port: ${PORT}`));
+    app.listen(process.env.PORT || 3001, '0.0.0.0', () => console.log(`Running server on port: ${process.env.PORT}`));
   })
   .catch((error) => {
     console.log('Connection with database generated an error:\r\n');
